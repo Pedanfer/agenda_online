@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/reloj_analog"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="4dp">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"></View>
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
+            android:text="@string/Label_Inicio"
+            android:textAlignment="center"
+            android:textColor="#4D6392"
+            android:textSize="20dp" />
+
+        <com.imankur.analogclockview.AnalogClock
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            app:showSecondHand="true" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"></View>
+
+
+        <!--BOTÓN LOGIN-->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/Btn_Login"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:backgroundTint="#4D6392"
+            android:textColor="@color/white"
+            android:text="@string/Btn_Login"
+            app:cornerRadius="20dp" />
+
+        <!--BOTÓN REGISTRO-->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/Btn_Registro"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="@string/Btn_Registro"
+            app:cornerRadius="20dp"
+            android:backgroundTint="#4D6392"
+            android:textColor="@color/white"
+            app:iconTint="#3D5AFE"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</RelativeLayout>

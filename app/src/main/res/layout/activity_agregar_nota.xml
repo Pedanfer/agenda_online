@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Notas.Add_Nota">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <!--UID DEL USUARIO-->
+        <TextView
+            android:id="@+id/Uid_Usuario"
+            android:hint="@string/Uid_Usuario"
+            android:textSize="18sp"
+            android:visibility="gone"
+            android:fontFamily="@font/worksans"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <!--CORREO DEL USUARIO-->
+        <TextView
+            android:id="@+id/Correo_usuario"
+            android:hint="@string/Correo_usuario"
+            android:textSize="18sp"
+            android:visibility="gone"
+            android:fontFamily="@font/worksans"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <!--ICONO - TEXTVIEW-->
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+
+            <!--Icono-->
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/fecha_hora_registro"/>
+
+            <TextView
+                android:text="@string/Fecha_hora_actual_TXT"
+                android:textSize="20sp"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/worksans"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <!--FECHA Y HORA ACTUAL DEL DISPOSITIVO-->
+        <TextView
+            android:id="@+id/Fecha_hora_actual"
+            android:hint="@string/Fecha_hora_actual"
+            android:textSize="18sp"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/worksans"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"></View>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/correoInputttt"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/Titulo"
+            app:boxBackgroundColor="@android:color/white"
+            app:boxCornerRadiusBottomEnd="8dp"
+            app:boxCornerRadiusBottomStart="8dp"
+            app:boxCornerRadiusTopEnd="8dp"
+            app:boxCornerRadiusTopStart="8dp"
+            app:boxStrokeColor="@color/colorPrimary"
+            app:boxStrokeWidth="1dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/Titulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/worksans"
+                android:inputType="text"
+                android:maxLines="1"
+                android:padding="8dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/correoInputt"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/Descripcion"
+            android:layout_marginTop="16dp"
+            app:boxBackgroundColor="@android:color/white"
+            app:boxCornerRadiusBottomEnd="8dp"
+            app:boxCornerRadiusBottomStart="8dp"
+            app:boxCornerRadiusTopEnd="8dp"
+            app:boxCornerRadiusTopStart="8dp"
+            app:boxStrokeColor="@color/colorPrimary"
+            app:boxStrokeWidth="1dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/Descripcion"
+                android:gravity="left|top"
+                android:inputType="textCapSentences|textMultiLine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/worksans"
+                android:lines="8"
+                android:padding="8dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"></View>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <!--BOTÓN PARA ABRIR CALENDARIO-->
+            <Button
+                android:id="@+id/Btn_Calendario"
+                android:text="@string/Btn_Calendario"
+                app:icon="@drawable/icono_calendario"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <!--VISUALIZAR FECHA ELEGIDA-->
+            <TextView
+                android:id="@+id/Fecha"
+                android:hint="@string/Fecha"
+                android:textSize="20sp"
+                android:layout_marginStart="15dp"
+                android:fontFamily="@font/worksans"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"></View>
+
+        <!--ESTADO DE LA NOTA-->
+        <TextView
+            android:id="@+id/Estado"
+            android:text="@string/Estado"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/worksans"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

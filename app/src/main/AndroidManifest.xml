@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.redsystem.agendaonline">
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/icono_agenda"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/icono_agenda_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AgendaOnline">
+
+        <meta-data
+            android:name="android.os.timezone"
+            android:value="Europe/Madrid" />
+
+        <activity
+            android:name=".Configuracion.Configuration_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Contactos.Modify_Contacto"
+            android:exported="true" />
+        <activity
+            android:name=".Contactos.Detail_Contacto"
+            android:exported="true" />
+        <activity
+            android:name=".Contactos.Add_Contacto"
+            android:exported="true" />
+        <activity
+            android:name=".Contactos.Contactos_List"
+            android:exported="true" />
+        <activity
+            android:name=".ActualizarPass.ModifyPassword"
+            android:exported="true" />
+        <activity
+            android:name=".Perfil.Edit_Profile_Pic"
+            android:exported="true" />
+        <activity
+            android:name=".Notas.Detail_Nota"
+            android:exported="true" />
+        <activity android:name=".Notas.Modify_Nota" />
+        <activity android:name=".Perfil.User_Profile" />
+        <activity android:name=".Notas.Notas_Importantes_List" />
+        <activity android:name=".Notas.Notas_List" />
+        <activity android:name=".Notas.Add_Nota" />
+        <activity
+            android:name=".Main_Menu_Activity"
+            android:exported="true" />
+        <activity
+            android:name=".Register_Activity"
+            android:exported="true" />
+        <activity
+            android:name=".Login_Activity"
+            android:exported="true" />
+        <activity
+            android:name=".Loading_Activity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

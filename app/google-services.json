@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "923307033506",
+    "project_id": "agendatfg-f073c",
+    "storage_bucket": "agendatfg-f073c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:923307033506:android:3faad8f603dcfa687228fb",
+        "android_client_info": {
+          "package_name": "com.redsystem.agendaonline"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "923307033506-04c4ovmljckth6grhvtqjvotuqv6mo71.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.redsystem.agendaonline",
+            "certificate_hash": "b02958b9260d95abf1d93796e4ade65e21d00688"
+          }
+        },
+        {
+          "client_id": "923307033506-vul1jh73naff4ldn8ns0f3m9fmophfi6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrSMMdgMgK1_k6pfEOdIB1PUqEo2fGw0E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "923307033506-vul1jh73naff4ldn8ns0f3m9fmophfi6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
