@@ -33,7 +33,7 @@
                 android:layout_width="70dp"
                 android:layout_height="100dp"
                 android:layout_gravity="center"
-                android:src="@drawable/elegir_galeria"/>
+                android:src="@drawable/baseline_photo_library_24"/>
 
             <!--Botón-->
             <Button
@@ -60,7 +60,7 @@
                 android:layout_width="70dp"
                 android:layout_height="100dp"
                 android:layout_gravity="center"
-                android:src="@drawable/elegir_camara"/>
+                android:src="@drawable/baseline_photo_camera_24"/>
 
             <!--Botón-->
             <Button
