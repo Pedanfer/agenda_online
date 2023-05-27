@@ -1,6 +1,7 @@
 package com.redsystem.agendaonline.ViewModels;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -44,8 +45,7 @@ public class ViewModel_Nota extends RecyclerView.ViewHolder {
             }
         });
     }
-
-    public void SetearDatos(Context context, String id_nota , String uid_usuario,  String correo_usuario,
+    public void SetearDatos(Context context, String id_nota , String uid_usuario, String correo_usuario,
                             String fecha_hora_registro, String titulo, String descripcion, String fecha_nota,
                             String estado){
 
@@ -78,11 +78,15 @@ public class ViewModel_Nota extends RecyclerView.ViewHolder {
         Fecha_Item.setText(fecha_nota);
         Estado_Item.setText(estado);
 
+        View backgroundHeader = mView.findViewById(R.id.background_header);
+
         //GESTIONAMOS EL COLOR DEL ESTADO
         if (estado.equals("Finalizado")){
             Tarea_Finalizada_Item.setVisibility(View.VISIBLE);
+            backgroundHeader.setBackgroundColor(Color.parseColor("#6CCB80"));
         }else {
             Tarea_No_Finalizada_Item.setVisibility(View.VISIBLE);
+            backgroundHeader.setBackgroundColor(Color.parseColor("#DF877B"));
         }
     }
 }

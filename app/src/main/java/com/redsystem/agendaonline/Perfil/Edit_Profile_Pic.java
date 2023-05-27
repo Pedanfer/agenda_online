@@ -114,7 +114,7 @@ public class Edit_Profile_Pic extends AppCompatActivity {
 
                 Glide.with(getApplicationContext())
                         .load(imagen_perfil)
-                        .placeholder(R.drawable.imagen_perfil_usuario)
+                        .placeholder(R.drawable.baseline_person_white)
                         .into(ImagenPerfilActualizar);
             }
 

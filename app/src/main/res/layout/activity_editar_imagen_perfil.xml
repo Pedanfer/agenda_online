@@ -20,7 +20,7 @@
             android:layout_gravity="center"
             android:background="#354F60"
             android:scaleType="centerCrop"
-            android:src="@drawable/imagen_perfil_usuario"/>
+            android:src="@drawable/baseline_person_white"/>
 
         <Button
             android:id="@+id/BtnElegirImagenDe"

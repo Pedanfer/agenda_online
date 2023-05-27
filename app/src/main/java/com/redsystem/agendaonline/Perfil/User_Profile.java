@@ -21,6 +21,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -40,7 +41,7 @@ public class User_Profile extends AppCompatActivity {
 
     ImageView Imagen_Perfil;
     TextView Correo_Perfil, Uid_Perfil, Telefono_Perfil, Fecha_Nacimiento_Perfil;
-    EditText Nombres_Perfil, Apellidos_Perfil, Edad_Perfil,
+    TextInputEditText Nombres_Perfil, Apellidos_Perfil, Edad_Perfil,
             Domicilio_Perfil, Universidad_Perfil,
             Profesion_Perfil;
 
@@ -173,11 +174,11 @@ public class User_Profile extends AppCompatActivity {
     private void Cargar_Imagen(String imagen_perfil) {
         try {
             /*Cuando la imagen ha sido traida exitosamente desde Firebase*/
-            Glide.with(getApplicationContext()).load(imagen_perfil).placeholder(R.drawable.imagen_perfil_usuario).into(Imagen_Perfil);
+            Glide.with(getApplicationContext()).load(imagen_perfil).placeholder(R.drawable.baseline_person_white).into(Imagen_Perfil);
 
         }catch (Exception e){
             /*Si la imagen no fue traida con éxito*/
-            Glide.with(getApplicationContext()).load(R.drawable.imagen_perfil_usuario).into(Imagen_Perfil);
+            Glide.with(getApplicationContext()).load(R.drawable.baseline_person_white).into(Imagen_Perfil);
 
         }
     }

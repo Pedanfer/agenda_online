@@ -28,44 +28,152 @@
             android:layout_height="120dp"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:src="@drawable/agregar_contacto_bd"/>
+            android:src="@drawable/round_person_pin_24"/>
 
-        <!--Nombres del contacto-->
-        <EditText
-            android:id="@+id/Nombres_C"
-            android:hint="@string/Nombres_C"
-            android:layout_marginTop="10dp"
-            android:inputType="textCapWords|textPersonName"
-            android:fontFamily="@font/worksans"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:boxCornerRadiusBottomEnd="8dp"
+            app:boxCornerRadiusBottomStart="8dp"
+            app:boxCornerRadiusTopEnd="8dp"
+            app:boxCornerRadiusTopStart="8dp"
+            app:boxStrokeColor="@color/colorPrimary"
+            android:layout_marginBottom="8dp"
+            app:boxStrokeWidth="1dp"
+            android:layout_marginTop="15dp">
 
-        <!--Apellidos del contacto-->
-        <EditText
-            android:id="@+id/Apellidos_C"
-            android:hint="@string/Apellidos_C"
-            android:inputType="textCapWords|textPersonName"
-            android:fontFamily="@font/worksans"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            <EditText
+                android:id="@+id/Nombres_C"
+                android:hint="@string/Nombres_C"
+                android:inputType="textPersonName|textCapWords"
+                android:fontFamily="@font/worksans"
+                android:padding="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
 
-        <!--Correo del contacto-->
-        <EditText
-            android:id="@+id/Correo_C"
-            android:hint="@string/Correo_C"
-            android:inputType="textEmailAddress"
-            android:fontFamily="@font/worksans"
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="8dp"
+            app:boxCornerRadiusBottomEnd="8dp"
+            app:boxCornerRadiusBottomStart="8dp"
+            app:boxCornerRadiusTopEnd="8dp"
+            app:boxCornerRadiusTopStart="8dp"
+            app:boxStrokeColor="@color/colorPrimary"
+            app:boxStrokeWidth="1dp">
+
+            <EditText
+                android:id="@+id/Apellidos_C"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/worksans"
+                android:hint="@string/Apellidos_C"
+                android:inputType="textPersonName|textCapWords"
+                android:padding="20dp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="8dp"
+            app:boxCornerRadiusBottomEnd="8dp"
+            app:boxCornerRadiusBottomStart="8dp"
+            app:boxCornerRadiusTopEnd="8dp"
+            app:boxCornerRadiusTopStart="8dp"
+            app:boxStrokeColor="@color/colorPrimary"
+            app:boxStrokeWidth="1dp">
+
+            <EditText
+                android:id="@+id/Correo_C"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/worksans"
+                android:hint="@string/Correo_C"
+                android:inputType="textPersonName|textCapWords"
+                android:padding="20dp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="8dp"
+            app:boxCornerRadiusBottomEnd="8dp"
+            app:boxCornerRadiusBottomStart="8dp"
+            app:boxCornerRadiusTopEnd="8dp"
+            app:boxCornerRadiusTopStart="8dp"
+            app:boxStrokeColor="@color/colorPrimary"
+            app:boxStrokeWidth="1dp">
+
+            <EditText
+                android:id="@+id/Edad_C"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/worksans"
+                android:hint="@string/Edad_C"
+                android:inputType="textPersonName|textCapWords"
+                android:padding="20dp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="8dp"
+            app:boxCornerRadiusBottomEnd="8dp"
+            app:boxCornerRadiusBottomStart="8dp"
+            app:boxCornerRadiusTopEnd="8dp"
+            app:boxCornerRadiusTopStart="8dp"
+            app:boxStrokeColor="@color/colorPrimary"
+            app:boxStrokeWidth="1dp">
+
+            <EditText
+                android:id="@+id/Direccion_C"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/worksans"
+                android:hint="@string/Direccion_C"
+                android:inputType="textPersonName|textCapWords"
+                android:padding="20dp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
         <!--Teléfono del contactos-->
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
+            android:layout_marginTop="8dp"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
+            <!--Código del país-->
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/Editar_Telefono_C"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:src="@drawable/baseline_contact_phone_24"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"></View>
+
             <!--Teléfono del contactos-->
             <TextView
+                android:layout_marginLeft="32dp"
                 android:id="@+id/Telefono_C"
                 android:hint="@string/Telefono_C"
                 android:fontFamily="@font/worksans"
@@ -74,36 +182,11 @@
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"/>
 
-            <!--Código del país-->
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/Editar_Telefono_C"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:layout_gravity="center"
-                android:src="@drawable/editar_telefono"/>
-
         </androidx.appcompat.widget.LinearLayoutCompat>
-
-        <!--Edad del contacto-->
-        <EditText
-            android:id="@+id/Edad_C"
-            android:hint="@string/Edad_C"
-            android:inputType="number"
-            android:fontFamily="@font/worksans"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
-        <!--Dirección del contacto-->
-        <EditText
-            android:id="@+id/Direccion_C"
-            android:hint="@string/Direccion_C"
-            android:inputType="textCapWords|text"
-            android:fontFamily="@font/worksans"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
 
         <!--Botón para registrar contacto-->
         <Button
+            android:layout_marginTop="24dp"
             android:id="@+id/Btn_Guardar_Contacto"
             android:text="@string/Btn_Guardar_Contacto"
             android:fontFamily="@font/worksans"

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Perfil.User_Profile">
 
     <androidx.appcompat.widget.LinearLayoutCompat
@@ -22,7 +22,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/portada"/>
+                android:src="@drawable/background"/>
 
             <!--Imagen de perfil-->
             <androidx.appcompat.widget.AppCompatImageView
@@ -33,15 +33,15 @@
                 android:layout_marginTop="120dp"
                 android:layout_marginStart="15dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/imagen_perfil_usuario"/>
+                android:src="@drawable/baseline_person_white"/>
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/Editar_imagen"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_marginStart="130dp"
-                android:layout_marginTop="230dp"
-                android:src="@drawable/editar_imagen_perfil"/>
+                android:layout_marginStart="150dp"
+                android:layout_marginTop="240dp"
+                android:src="@drawable/baseline_edit_24"/>
 
         </RelativeLayout>
 
@@ -52,17 +52,32 @@
             android:orientation="vertical"
             android:padding="10dp">
 
-            <!--Correo-->
-            <TextView
-                android:id="@+id/Correo_Perfil"
-                android:text="@string/Correo_Perfil"
-                android:layout_gravity="center"
-                android:textSize="25sp"
-                android:textStyle="bold"
-                android:fontFamily="@font/worksans"
-                android:layout_marginTop="5dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/correoss"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/CorreoLogin"
+                app:boxBackgroundColor="@android:color/white"
+                app:boxCornerRadiusBottomEnd="8dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                app:boxCornerRadiusTopEnd="8dp"
+                app:boxCornerRadiusTopStart="8dp"
+                app:boxStrokeColor="@color/colorPrimary"
+                app:boxStrokeWidth="1dp"
+                app:startIconContentDescription="@string/CorreoLogin"
+               >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/Correo_Perfil"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/worksans"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1"
+                    android:padding="8dp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
 
             <!--Uid-->
             <TextView
@@ -73,72 +88,185 @@
                 android:drawableStart="@drawable/icono_uid_perfil_usuario"
                 android:drawablePadding="5dp"
                 android:layout_marginTop="10dp"
+                android:visibility="gone"
                 android:fontFamily="@font/worksans"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
-            <!--Nombres-->
-            <EditText
-                android:id="@+id/Nombres_Perfil"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/correossss"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:hint="@string/Nombres_Perfil"
-                android:layout_marginTop="10dp"
-                android:inputType="textPersonName"
-                android:fontFamily="@font/worksans"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_marginTop="16dp"
+                app:boxBackgroundColor="@android:color/white"
+                app:boxCornerRadiusBottomEnd="8dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                app:boxCornerRadiusTopEnd="8dp"
+                app:boxCornerRadiusTopStart="8dp"
+                app:boxStrokeColor="@color/colorPrimary"
+                app:boxStrokeWidth="1dp"
+                app:startIconContentDescription="@string/CorreoLogin"
+                >
 
-            <!--Apellidos-->
-            <EditText
-                android:id="@+id/Apellidos_Perfil"
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/Nombres_Perfil"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/worksans"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1"
+                    android:padding="8dp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/correosss"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:hint="@string/Apellidos_Perfil"
-                android:inputType="textPersonName"
-                android:fontFamily="@font/worksans"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                app:boxBackgroundColor="@android:color/white"
+                android:layout_marginTop="16dp"
+                app:boxCornerRadiusBottomEnd="8dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                app:boxCornerRadiusTopEnd="8dp"
+                app:boxCornerRadiusTopStart="8dp"
+                app:boxStrokeColor="@color/colorPrimary"
+                app:boxStrokeWidth="1dp"
+                app:startIconContentDescription="@string/CorreoLogin"
+                >
 
-            <!--Edad-->
-            <EditText
-                android:id="@+id/Edad_Perfil"
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/Apellidos_Perfil"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/worksans"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1"
+                    android:padding="8dp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/correoss4s"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:hint="@string/Edad_Perfil"
-                android:inputType="number"
-                android:fontFamily="@font/worksans"
+                app:boxBackgroundColor="@android:color/white"
+                android:layout_marginTop="16dp"
+                app:boxCornerRadiusBottomEnd="8dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                app:boxCornerRadiusTopEnd="8dp"
+                app:boxCornerRadiusTopStart="8dp"
+                app:boxStrokeColor="@color/colorPrimary"
+                app:boxStrokeWidth="1dp"
+                app:startIconContentDescription="@string/CorreoLogin"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/Edad_Perfil"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/worksans"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1"
+                    android:padding="8dp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/correoss54s"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-
-
-            <!--Domiciio-->
-            <EditText
-                android:id="@+id/Domicilio_Perfil"
+                android:layout_height="wrap_content"
                 android:hint="@string/Domicilio_Perfil"
-                android:inputType="text"
-                android:fontFamily="@font/worksans"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                app:boxBackgroundColor="@android:color/white"
+                android:layout_marginTop="16dp"
+                app:boxCornerRadiusBottomEnd="8dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                app:boxCornerRadiusTopEnd="8dp"
+                app:boxCornerRadiusTopStart="8dp"
+                app:boxStrokeColor="@color/colorPrimary"
+                app:boxStrokeWidth="1dp"
+                app:startIconContentDescription="@string/CorreoLogin"
+                >
 
-            <!--Universidad-->
-            <EditText
-                android:id="@+id/Universidad_Perfil"
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/Domicilio_Perfil"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/worksans"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1"
+                    android:padding="8dp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/correoss47s"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:hint="@string/Universidad_Perfil"
-                android:inputType="text"
-                android:fontFamily="@font/worksans"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                app:boxBackgroundColor="@android:color/white"
+                android:layout_marginTop="16dp"
+                app:boxCornerRadiusBottomEnd="8dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                app:boxCornerRadiusTopEnd="8dp"
+                app:boxCornerRadiusTopStart="8dp"
+                app:boxStrokeColor="@color/colorPrimary"
+                app:boxStrokeWidth="1dp"
+                app:startIconContentDescription="@string/CorreoLogin"
+                >
 
-            <!--Profesión-->
-            <EditText
-                android:id="@+id/Profesion_Perfil"
-                android:hint="@string/Profesion_Perfil"
-                android:inputType="text"
-                android:fontFamily="@font/worksans"
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/Universidad_Perfil"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/worksans"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1"
+                    android:padding="8dp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/correoss48s"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:hint="@string/Profesion_Perfil"
+                app:boxBackgroundColor="@android:color/white"
+                android:layout_marginTop="16dp"
+                app:boxCornerRadiusBottomEnd="8dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                app:boxCornerRadiusTopEnd="8dp"
+                app:boxCornerRadiusTopStart="8dp"
+                app:boxStrokeColor="@color/colorPrimary"
+                app:boxStrokeWidth="1dp"
+                app:startIconContentDescription="@string/CorreoLogin"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/Profesion_Perfil"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/worksans"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1"
+                    android:padding="8dp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginTop="5dp">
+
 
                 <!--Teléfono-->
                 <TextView
@@ -150,12 +278,17 @@
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"/>
 
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"></View>
+
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/Editar_Telefono"
                     android:layout_width="35dp"
                     android:layout_height="35dp"
-                    android:layout_marginStart="15dp"
-                    android:src="@drawable/editar_telefono"/>
+                    android:src="@drawable/baseline_contact_phone_24"/>
+
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -174,12 +307,17 @@
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"/>
 
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"></View>
+
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/Editar_fecha"
                     android:layout_width="35dp"
                     android:layout_height="35dp"
                     android:layout_marginStart="15dp"
-                    android:src="@drawable/calendario"/>
+                    android:src="@drawable/baseline_today_24"/>
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 

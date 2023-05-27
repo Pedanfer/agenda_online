@@ -20,6 +20,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.button.MaterialButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -40,6 +41,8 @@ public class Modify_Nota extends AppCompatActivity implements AdapterView.OnItem
 
     //DECLARAR LOS STRING PARA ALMACENAR LOS DATOS RECUPERADOS DE ACTIVIDAD ANTERIOR
     String id_nota_R , uid_usuario_R , correo_usuario_R, fecha_registro_R, titulo_R, descripcion_R, fecha_R, estado_R;
+
+    MaterialButton btnActualizar;
 
     ImageView Tarea_Finalizada, Tarea_No_Finalizada;
 
@@ -83,6 +86,10 @@ public class Modify_Nota extends AppCompatActivity implements AdapterView.OnItem
         Titulo_A = findViewById(R.id.Titulo_A);
         Descripcion_A = findViewById(R.id.Descripcion_A);
         Btn_Calendario_A = findViewById(R.id.Btn_Calendario_A);
+
+        btnActualizar = findViewById(R.id.btn_actualizar_nota);
+
+        btnActualizar.setOnClickListener(v -> ActualizarNotaBD());
 
         Tarea_Finalizada = findViewById(R.id.Tarea_Finalizada);
         Tarea_No_Finalizada = findViewById(R.id.Tarea_No_Finalizada);

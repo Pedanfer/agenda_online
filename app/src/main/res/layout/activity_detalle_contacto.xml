@@ -21,7 +21,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="210dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/portada_contacto"/>
+                android:src="@drawable/background"/>
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/Imagen_C_D"
@@ -31,7 +31,7 @@
                 android:layout_marginTop="120dp"
                 android:background="#354f60"
                 android:scaleType="centerCrop"
-                android:src="@drawable/imagen_contacto" />
+                android:src="@drawable/baseline_person_white" />
 
         </RelativeLayout>
 
@@ -40,15 +40,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="10dp">
-
-            <TextView
-                android:textSize="25sp"
-                android:textStyle="bold"
-                android:layout_gravity="center"
-                android:fontFamily="@font/worksans"
-                android:text="@string/DetalleContactoTXT"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
 
             <TextView
                 android:id="@+id/Id_C_D"
@@ -106,23 +97,24 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:layout_marginTop="10dp"
-                android:background="#000"/>
-
             <TextView
                 android:id="@+id/Telefono_C_D"
                 android:text="@string/Telefono_C_D"
                 android:textSize="20sp"
                 android:fontFamily="@font/worksans"
                 android:layout_marginTop="5dp"
-                android:drawableStart="@drawable/icono_telefono"
+                android:drawableStart="@drawable/baseline_contact_phone_24"
                 android:drawablePadding="10dp"
-                android:layout_gravity="center"
+                android:layout_gravity="fill_horizontal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
+
+            <View
+                android:layout_marginVertical="24dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="#000"/>
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
@@ -142,7 +134,7 @@
                     <androidx.appcompat.widget.AppCompatImageView
                         android:layout_width="40dp"
                         android:layout_height="40dp"
-                        android:src="@drawable/icono_llamada"/>
+                        android:src="@drawable/icono_telefono"/>
 
                     <Button
                         android:id="@+id/Llamar_C"
@@ -164,7 +156,7 @@
                     <androidx.appcompat.widget.AppCompatImageView
                         android:layout_width="40dp"
                         android:layout_height="40dp"
-                        android:src="@drawable/icono_enviar_mensaje"/>
+                        android:src="@drawable/baseline_message_24"/>
 
                     <Button
                         android:id="@+id/Mensaje_C"

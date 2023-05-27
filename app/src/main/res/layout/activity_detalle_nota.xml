@@ -10,6 +10,7 @@
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="12dp"
         android:orientation="vertical">
 
         <!--DATOS DE LA NOTA-->
@@ -18,116 +19,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="5dp">
-
-            <!--ICONO - TXT - ID NOTA-->
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <!--ICONO-->
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/id_nota_detalle"/>
-
-                <!--TXT-->
-                <TextView
-                    android:text="@string/Id_nota_Detalle_TXT"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:fontFamily="@font/worksans"
-                    android:textSize="20sp"
-                    android:layout_marginStart="10dp"/>
-
-            </androidx.appcompat.widget.LinearLayoutCompat>
-
-            <!--DATO - ID NOTA-->
-            <TextView
-                android:id="@+id/Id_nota_Detalle"
-                android:text="@string/Id_nota_Detalle"
-                android:fontFamily="@font/worksans"
-                android:textSize="17sp"
-                android:textStyle="bold"
-                android:layout_gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-            <!--ICONO - TXT - UID USUARIO-->
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal">
-
-                <!--ICONO-->
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/uid_usuario_detalle"/>
-
-                <!--TXT-->
-                <TextView
-                    android:text="@string/Uid_usuario_Detalle_TXT"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:fontFamily="@font/worksans"
-                    android:textSize="20sp"
-                    android:layout_marginStart="10dp"/>
-
-            </androidx.appcompat.widget.LinearLayoutCompat>
-
-            <!--DATO - UID USUARIO-->
-            <TextView
-                android:id="@+id/Uid_usuario_Detalle"
-                android:text="@string/Uid_usuario_Detalle"
-                android:fontFamily="@font/worksans"
-                android:textSize="17sp"
-                android:textStyle="bold"
-                android:layout_gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-            <!--ICONO - TXT - CORREO-->
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal">
-
-                <!--ICONO-->
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/correo_usuario_detalle"/>
-
-                <!--TXT-->
-                <TextView
-                    android:text="@string/Correo_usuario_Detalle_TXT"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:fontFamily="@font/worksans"
-                    android:textSize="20sp"
-                    android:layout_marginStart="10dp"/>
-
-            </androidx.appcompat.widget.LinearLayoutCompat>
-
-            <!--DATO - CORREO-->
-            <TextView
-                android:id="@+id/Correo_usuario_Detalle"
-                android:text="@string/Correo_usuario_Detalle"
-                android:fontFamily="@font/worksans"
-                android:textSize="17sp"
-                android:textStyle="bold"
-                android:layout_gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
 
             <!--ICONO - TXT - TITULO-->
             <androidx.appcompat.widget.LinearLayoutCompat
@@ -159,12 +50,20 @@
             <TextView
                 android:id="@+id/Titulo_Detalle"
                 android:text="@string/Titulo_Detalle"
+                android:layout_marginBottom="16dp"
                 android:fontFamily="@font/worksans"
                 android:textSize="17sp"
                 android:textStyle="bold"
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_marginVertical="32dp"
+                android:layout_height="1dp"
+                android:background="#4D6392"
+                ></View>
 
             <!--ICONO - TXT - DESCRIPCIÓN-->
             <androidx.appcompat.widget.LinearLayoutCompat
@@ -196,12 +95,20 @@
             <TextView
                 android:id="@+id/Descripcion_Detalle"
                 android:text="@string/Descripcion_Detalle"
+                android:layout_marginBottom="16dp"
                 android:fontFamily="@font/worksans"
                 android:textSize="17sp"
                 android:textStyle="bold"
                 android:layout_gravity="center"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"/>
+                android:layout_height="wrap_content"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_marginVertical="32dp"
+                android:layout_height="1dp"
+                android:background="#4D6392"
+                ></View>
 
             <!--ICONO - TXT - FECHA REGISTRO-->
             <androidx.appcompat.widget.LinearLayoutCompat
@@ -238,7 +145,15 @@
                 android:textStyle="bold"
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
+                android:layout_marginBottom="16dp"
                 android:layout_height="wrap_content"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_marginVertical="32dp"
+                android:layout_height="1dp"
+                android:background="#4D6392"
+                ></View>
 
             <!--ICONO - TXT - FECHA NOTA-->
             <androidx.appcompat.widget.LinearLayoutCompat
@@ -275,7 +190,15 @@
                 android:textStyle="bold"
                 android:layout_gravity="center"
                 android:layout_width="wrap_content"
+                android:layout_marginBottom="16dp"
                 android:layout_height="wrap_content"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_marginVertical="32dp"
+                android:layout_height="1dp"
+                android:background="#4D6392"
+                ></View>
 
             <!--ICONO - TXT - ESTADO-->
             <androidx.appcompat.widget.LinearLayoutCompat
@@ -316,14 +239,20 @@
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"></View>
+
         <!--BOTÓN IMPORTANTE-->
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:layout_marginBottom="24dp"
             android:background="#34495E">
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/Boton_Importante"
                 android:text="@string/Boton_Importante"
                 android:background="@android:color/transparent"
@@ -336,6 +265,9 @@
 
 
         </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
 
 
     </androidx.appcompat.widget.LinearLayoutCompat>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -20,7 +20,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="210dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/portada_contacto" />
+                android:src="@drawable/background" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/Imagen_C_A"
@@ -30,16 +30,16 @@
                 android:layout_marginTop="120dp"
                 android:background="#354F60"
                 android:scaleType="centerCrop"
-                android:src="@drawable/imagen_contacto" />
+                android:src="@drawable/baseline_person_white" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/Actualizar_imagen_C_A"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="130dp"
-                android:layout_marginTop="230dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="152dp"
+                android:layout_marginTop="240dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/editar_imagen_perfil" />
+                android:src="@drawable/baseline_edit_24" />
 
 
         </RelativeLayout>
@@ -50,50 +50,146 @@
             android:orientation="vertical"
             android:padding="10dp">
 
-
-            <TextView
-                android:id="@+id/Id_C_A"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/worksans"
-                android:text="@string/Id_C_A" />
-
-            <TextView
-                android:id="@+id/Uid_C_A"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/worksans"
-                android:text="@string/Uid_C_A" />
-
-            <EditText
-                android:id="@+id/Nombres_C_A"
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/worksans"
-                android:hint="@string/Nombres_C_A"
-                android:inputType="textCapWords|textPersonName" />
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="8dp"
+                app:boxCornerRadiusBottomEnd="8dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                app:boxCornerRadiusTopEnd="8dp"
+                app:boxCornerRadiusTopStart="8dp"
+                app:boxStrokeColor="@color/colorPrimary"
+                app:boxStrokeWidth="1dp">
 
-            <EditText
-                android:id="@+id/Apellidos_C_A"
+                <EditText
+                    android:id="@+id/Nombres_C_A"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/worksans"
+                    android:hint="@string/Nombres_C"
+                    android:inputType="textPersonName|textCapWords"
+                    android:padding="20dp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/worksans"
-                android:hint="@string/Apellidos_C_A"
-                android:inputType="textCapWords|textPersonName" />
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="8dp"
+                app:boxCornerRadiusBottomEnd="8dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                app:boxCornerRadiusTopEnd="8dp"
+                app:boxCornerRadiusTopStart="8dp"
+                app:boxStrokeColor="@color/colorPrimary"
+                app:boxStrokeWidth="1dp">
 
-            <EditText
-                android:id="@+id/Correo_C_A"
+                <EditText
+                    android:id="@+id/Apellidos_C_A"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/worksans"
+                    android:hint="@string/Apellidos_C"
+                    android:inputType="textPersonName|textCapWords"
+                    android:padding="20dp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/worksans"
-                android:hint="@string/Correo_C_A"
-                android:inputType="textEmailAddress" />
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="8dp"
+                app:boxCornerRadiusBottomEnd="8dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                app:boxCornerRadiusTopEnd="8dp"
+                app:boxCornerRadiusTopStart="8dp"
+                app:boxStrokeColor="@color/colorPrimary"
+                app:boxStrokeWidth="1dp">
+
+                <EditText
+                    android:id="@+id/Correo_C_A"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/worksans"
+                    android:hint="@string/Correo_C"
+                    android:inputType="textPersonName|textCapWords"
+                    android:padding="20dp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="8dp"
+                app:boxCornerRadiusBottomEnd="8dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                app:boxCornerRadiusTopEnd="8dp"
+                app:boxCornerRadiusTopStart="8dp"
+                app:boxStrokeColor="@color/colorPrimary"
+                app:boxStrokeWidth="1dp">
+
+                <EditText
+                    android:id="@+id/Edad_C_A"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/worksans"
+                    android:hint="@string/Edad_C"
+                    android:inputType="textPersonName|textCapWords"
+                    android:padding="20dp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="8dp"
+                app:boxCornerRadiusBottomEnd="8dp"
+                app:boxCornerRadiusBottomStart="8dp"
+                app:boxCornerRadiusTopEnd="8dp"
+                app:boxCornerRadiusTopStart="8dp"
+                app:boxStrokeColor="@color/colorPrimary"
+                app:boxStrokeWidth="1dp">
+
+                <EditText
+                    android:id="@+id/Direccion_C_A"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/worksans"
+                    android:hint="@string/Direccion_C"
+                    android:inputType="textPersonName|textCapWords"
+                    android:padding="20dp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/Actualizar_Telefono_C_A"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/baseline_contact_phone_24" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"></View>
+
 
                 <TextView
                     android:id="@+id/Telefono_C_A"
@@ -105,32 +201,9 @@
                     android:text="@string/Telefono_C_A"
                     android:textSize="20sp" />
 
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/Actualizar_Telefono_C_A"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:layout_gravity="center"
-                    android:layout_marginStart="15dp"
-                    android:src="@drawable/editar_telefono" />
 
 
             </androidx.appcompat.widget.LinearLayoutCompat>
-
-            <EditText
-                android:id="@+id/Edad_C_A"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/worksans"
-                android:hint="@string/Edad_C_A"
-                android:inputType="number" />
-
-            <EditText
-                android:id="@+id/Direccion_C_A"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/worksans"
-                android:hint="@string/Direccion_C_A"
-                android:inputType="textCapWords|text" />
 
 
             <Button
@@ -144,4 +217,4 @@
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
-</RelativeLayout>
+</ScrollView>

@@ -27,7 +27,7 @@ public class Detail_Nota extends AppCompatActivity {
 
     Button Boton_Importante;
 
-    TextView Id_nota_Detalle, Uid_usuario_Detalle, Correo_usuario_Detalle, Titulo_Detalle, Descripcion_Detalle,
+    TextView Titulo_Detalle, Descripcion_Detalle,
             Fecha_Registro_Detalle, Fecha_Nota_Detalle, Estado_Detalle;
 
     //DECLARAR LOS STRING PARA ALMACENAR LOS DATOS RECUPERADOS DE ACTIVIDAD ANTERIOR
@@ -64,9 +64,6 @@ public class Detail_Nota extends AppCompatActivity {
     }
 
     private void InicializarVistas(){
-        Id_nota_Detalle = findViewById(R.id.Id_nota_Detalle);
-        Uid_usuario_Detalle = findViewById(R.id.Uid_usuario_Detalle);
-        Correo_usuario_Detalle = findViewById(R.id.Correo_usuario_Detalle);
         Titulo_Detalle = findViewById(R.id.Titulo_Detalle);
         Descripcion_Detalle = findViewById(R.id.Descripcion_Detalle);
         Fecha_Registro_Detalle = findViewById(R.id.Fecha_Registro_Detalle);
@@ -93,9 +90,6 @@ public class Detail_Nota extends AppCompatActivity {
     }
 
     private void SetearDatosRecuperados(){
-        Id_nota_Detalle.setText(id_nota_R);
-        Uid_usuario_Detalle.setText(uid_usuario_R);
-        Correo_usuario_Detalle.setText(correo_usuario_R);
         Fecha_Registro_Detalle.setText(fecha_registro_R);
         Titulo_Detalle.setText(titulo_R);
         Descripcion_Detalle.setText(descripcion_R);

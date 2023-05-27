@@ -81,12 +81,12 @@ public class ViewModelContacto extends RecyclerView.ViewHolder {
 
         try {
             /*Si la imagen del contacto existe existe en la BD*/
-            Glide.with(context).load(imagen).placeholder(R.drawable.imagen_contacto).into(Imagen_c_Item);
+            Glide.with(context).load(imagen).placeholder(R.drawable.round_person_pin_24).into(Imagen_c_Item);
 
 
         }catch (Exception e){
             /*Si la imagen del contacto NO existe existe en la BD*/
-            Glide.with(context).load(R.drawable.imagen_contacto).into(Imagen_c_Item);
+            Glide.with(context).load(R.drawable.round_person_pin_24).into(Imagen_c_Item);
         }
 
     }

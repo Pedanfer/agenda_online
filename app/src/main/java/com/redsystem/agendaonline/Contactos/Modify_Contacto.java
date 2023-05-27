@@ -43,7 +43,7 @@ import java.util.HashMap;
 
 public class Modify_Contacto extends AppCompatActivity {
 
-    TextView Id_C_A, Uid_C_A, Telefono_C_A;
+    TextView Telefono_C_A;
     EditText Nombres_C_A, Apellidos_C_A, Correo_C_A, Edad_C_A, Direccion_C_A;
     ImageView Imagen_C_A, Actualizar_imagen_C_A, Actualizar_Telefono_C_A;
     Button Btn_Actualizar_C_A;
@@ -108,8 +108,6 @@ public class Modify_Contacto extends AppCompatActivity {
     }
 
     private void InicializarVistas(){
-        Id_C_A = findViewById(R.id.Id_C_A);
-        Uid_C_A = findViewById(R.id.Uid_C_A);
         Telefono_C_A = findViewById(R.id.Telefono_C_A);
         Nombres_C_A = findViewById(R.id.Nombres_C_A);
         Apellidos_C_A = findViewById(R.id.Apellidos_C_A);
@@ -141,8 +139,6 @@ public class Modify_Contacto extends AppCompatActivity {
     }
 
     private void SetearDatosRecuperados(){
-        Id_C_A.setText(id_c);
-        Uid_C_A.setText(uid_usuario);
         Nombres_C_A.setText(nombres_c);
         Apellidos_C_A.setText(apellidos_c);
         Correo_C_A.setText(correo_c);
@@ -156,7 +152,7 @@ public class Modify_Contacto extends AppCompatActivity {
 
         try {
 
-            Glide.with(getApplicationContext()).load(imagen_c).placeholder(R.drawable.imagen_contacto).into(Imagen_C_A);
+            Glide.with(getApplicationContext()).load(imagen_c).placeholder(R.drawable.baseline_person_white).into(Imagen_C_A);
 
         }catch (Exception e){
 
