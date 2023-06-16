@@ -1,14 +1,5 @@
 package com.redsystem.agendaonline.Perfil;
 
-import androidx.activity.result.ActivityResult;
-import androidx.activity.result.ActivityResultCallback;
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
-
 import android.Manifest;
 import android.app.Activity;
 import android.app.Dialog;
@@ -17,12 +8,22 @@ import android.content.ContentValues;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -35,8 +36,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.redsystem.agendaonline.R;
 
@@ -87,9 +88,9 @@ public class Edit_Profile_Pic extends AppCompatActivity {
         BtnActualizarImagen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (imagenUri == null){
+                if (imagenUri == null) {
                     Toast.makeText(Edit_Profile_Pic.this, "Inserte una nueva imagen", Toast.LENGTH_SHORT).show();
-                }else {
+                } else {
                     subirImagenStorage();
                 }
             }
@@ -104,13 +105,13 @@ public class Edit_Profile_Pic extends AppCompatActivity {
     }
 
 
-    private void LecturaDeImagen(){
+    private void LecturaDeImagen() {
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Usuarios");
         reference.child(user.getUid()).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 //Obtener el dato imagen
-                String imagen_perfil = ""+snapshot.child("imagen_perfil").getValue();
+                String imagen_perfil = "" + snapshot.child("imagen_perfil").getValue();
 
                 Glide.with(getApplicationContext())
                         .load(imagen_perfil)
@@ -125,27 +126,27 @@ public class Edit_Profile_Pic extends AppCompatActivity {
         });
     }
 
-    private void subirImagenStorage(){
+    private void subirImagenStorage() {
         progressDialog.setMessage("Subiendo imagen");
         progressDialog.show();
         String carpetaImagenes = "ImagenesPerfil/";
-        String NombreImagen = carpetaImagenes+firebaseAuth.getUid();
+        String NombreImagen = carpetaImagenes + firebaseAuth.getUid();
         StorageReference reference = FirebaseStorage.getInstance().getReference(NombreImagen);
         reference.putFile(imagenUri)
                 .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                     @Override
                     public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                         Task<Uri> uriTask = taskSnapshot.getStorage().getDownloadUrl();
-                        while (!uriTask.isSuccessful());
-                        String uriImagen = ""+uriTask.getResult();
+                        while (!uriTask.isSuccessful()) ;
+                        String uriImagen = "" + uriTask.getResult();
                         ActualizarImagenBD(uriImagen);
                     }
                 }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(Edit_Profile_Pic.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-        });
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(Edit_Profile_Pic.this, "" + e.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
 
     }
 
@@ -154,8 +155,8 @@ public class Edit_Profile_Pic extends AppCompatActivity {
         progressDialog.show();
 
         HashMap<String, Object> hashMap = new HashMap<>();
-        if (imagenUri != null){
-            hashMap.put("imagen_perfil", ""+uriImagen);
+        if (imagenUri != null) {
+            hashMap.put("imagen_perfil", "" + uriImagen);
         }
 
         DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("Usuarios");
@@ -169,11 +170,11 @@ public class Edit_Profile_Pic extends AppCompatActivity {
                         onBackPressed();
                     }
                 }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(Edit_Profile_Pic.this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-        });
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(Edit_Profile_Pic.this, "" + e.getMessage(), Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
 
     private void ElegirImagenDe() {
@@ -191,11 +192,14 @@ public class Edit_Profile_Pic extends AppCompatActivity {
                 //Toast.makeText(Editar_imagen_perfil.this, "Elegir de galería", Toast.LENGTH_SHORT).show();
                 //SeleccionarImagenGaleria();
                 if (ContextCompat.checkSelfPermission(Edit_Profile_Pic.this,
-                        Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED){
+                        Manifest.permission.READ_MEDIA_IMAGES) == PackageManager.PERMISSION_GRANTED) {
                     SeleccionarImagenGaleria();
                     dialog_elegir_imagen.dismiss();
-                }else {
-                    SolicitudPermisoGaleria.launch(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+                } else {
+                    if (Build.VERSION.SDK_INT > 29)
+                        SolicitudPermisoGaleria.launch(Manifest.permission.READ_MEDIA_IMAGES);
+                    else
+                        SolicitudPermisoGaleria.launch(Manifest.permission.READ_EXTERNAL_STORAGE);
                     dialog_elegir_imagen.dismiss();
                 }
 
@@ -209,10 +213,10 @@ public class Edit_Profile_Pic extends AppCompatActivity {
                 //SeleccionarImagenCamara();
                 //dialog_elegir_imagen.dismiss();
                 if (ContextCompat.checkSelfPermission(Edit_Profile_Pic.this,
-                        Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED){
+                        Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
                     SeleccionarImagenCamara();
                     dialog_elegir_imagen.dismiss();
-                }else {
+                } else {
                     SolicitudPermisoCamara.launch(Manifest.permission.CAMERA);
                     dialog_elegir_imagen.dismiss();
                 }
@@ -236,14 +240,13 @@ public class Edit_Profile_Pic extends AppCompatActivity {
             new ActivityResultCallback<ActivityResult>() {
                 @Override
                 public void onActivityResult(ActivityResult result) {
-                    if (result.getResultCode() == Activity.RESULT_OK){
+                    if (result.getResultCode() == Activity.RESULT_OK) {
                         //Obtener uri de la imagen
                         Intent data = result.getData();
                         imagenUri = data.getData();
                         //Setear la imagen seleccionada en el imageView
-                        ImagenPerfilActualizar.setImageURI(imagenUri);
-
-                    }else{
+                        Glide.with(getApplicationContext()).load(imagenUri).into(ImagenPerfilActualizar);
+                    } else {
                         Toast.makeText(Edit_Profile_Pic.this, "Cancelado por el usuario", Toast.LENGTH_SHORT).show();
                     }
                 }
@@ -253,9 +256,9 @@ public class Edit_Profile_Pic extends AppCompatActivity {
     /*PERMISO PARA ACCEDER A LA GALERIA*/
     private ActivityResultLauncher<String> SolicitudPermisoGaleria =
             registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted -> {
-                if (isGranted){
+                if (isGranted) {
                     SeleccionarImagenGaleria();
-                }else{
+                } else {
                     Toast.makeText(this, "Permiso denegado", Toast.LENGTH_SHORT).show();
                 }
             });
@@ -269,7 +272,6 @@ public class Edit_Profile_Pic extends AppCompatActivity {
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         intent.putExtra(MediaStore.EXTRA_OUTPUT, imagenUri);
         camaraActivityResultLauncher.launch(intent);
-
     }
 
     private ActivityResultLauncher<Intent> camaraActivityResultLauncher = registerForActivityResult(
@@ -277,10 +279,9 @@ public class Edit_Profile_Pic extends AppCompatActivity {
             new ActivityResultCallback<ActivityResult>() {
                 @Override
                 public void onActivityResult(ActivityResult result) {
-                    if (result.getResultCode() == Activity.RESULT_OK){
-                        ImagenPerfilActualizar.setImageURI(imagenUri);
-                    }
-                    else {
+                    if (result.getResultCode() == Activity.RESULT_OK) {
+                        Glide.with(getApplicationContext()).load(imagenUri).into(ImagenPerfilActualizar);
+                    } else {
                         Toast.makeText(Edit_Profile_Pic.this, "Cancelado por el usuario", Toast.LENGTH_SHORT).show();
                     }
                 }
@@ -289,10 +290,10 @@ public class Edit_Profile_Pic extends AppCompatActivity {
 
     /*PERMISO PARA ACCEDER A LA CAMARA*/
     private ActivityResultLauncher<String> SolicitudPermisoCamara =
-            registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted ->{
-                if (isGranted){
+            registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted -> {
+                if (isGranted) {
                     SeleccionarImagenCamara();
-                }else {
+                } else {
                     Toast.makeText(this, "Permiso denegado", Toast.LENGTH_SHORT).show();
                 }
             });
