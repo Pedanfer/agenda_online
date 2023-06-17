@@ -15,6 +15,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -38,6 +39,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.hbb20.CountryCodePicker;
+import com.redsystem.agendaonline.Perfil.Edit_Profile_Pic;
 import com.redsystem.agendaonline.R;
 import java.util.HashMap;
 
@@ -93,11 +95,15 @@ public class Modify_Contacto extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (ContextCompat.checkSelfPermission(Modify_Contacto.this,
-                        Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED){
+                        Manifest.permission.READ_MEDIA_IMAGES) == PackageManager.PERMISSION_GRANTED || ContextCompat.checkSelfPermission(Modify_Contacto.this,
+                        Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED){
                     SeleccionarImagenGaleria();
                 }
                 else {
-                    SolicitarPermisoGaleria.launch(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+                    if (Build.VERSION.SDK_INT > 29)
+                        SolicitarPermisoGaleria.launch(Manifest.permission.READ_MEDIA_IMAGES);
+                    else
+                        SolicitarPermisoGaleria.launch(Manifest.permission.READ_EXTERNAL_STORAGE);
                 }
             }
         });

@@ -192,7 +192,8 @@ public class Edit_Profile_Pic extends AppCompatActivity {
                 //Toast.makeText(Editar_imagen_perfil.this, "Elegir de galería", Toast.LENGTH_SHORT).show();
                 //SeleccionarImagenGaleria();
                 if (ContextCompat.checkSelfPermission(Edit_Profile_Pic.this,
-                        Manifest.permission.READ_MEDIA_IMAGES) == PackageManager.PERMISSION_GRANTED) {
+                        Manifest.permission.READ_MEDIA_IMAGES) == PackageManager.PERMISSION_GRANTED || ContextCompat.checkSelfPermission(Edit_Profile_Pic.this,
+                        Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
                     SeleccionarImagenGaleria();
                     dialog_elegir_imagen.dismiss();
                 } else {
